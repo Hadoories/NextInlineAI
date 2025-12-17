@@ -20,7 +20,7 @@ import { baseUrl } from "@/lib/seo";
 import { buildFaqSchema, buildProductSchema, buildWebPageSchema } from "@/lib/schema";
 
 export const revalidate = 3600;
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export const metadata: Metadata = {
   title: "Window & Solar Cleaning Booking System | AI Phone Receptionist & CRM | Next In Line AI",
