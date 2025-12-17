@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  --background: var(--nl-bg);
+  --foreground: var(--nl-text);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Base layout */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--nl-bg);
+  color: var(--nl-text);
+}
+
+/* A11y */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus-visible:focus-visible {
+  outline: 2px solid var(--nl-blue);
+  outline-offset: 2px;
+}
+
+/* Micro-noise overlay helper (can be used on containers) */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("/images/noise.png");
+  background-size: 128px 128px;
+  opacity: 0.02;
+}
+
+/* Zoom animation for CTA background */
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Breathing animation for industry cards */
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Pulse animation for step circles */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+/* Micro spark animation for step chips */
+@keyframes microSpark {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Checkmark animations */
+@keyframes checkmarkIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes numberIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Stepper animations */
+@keyframes drawPath1 {
+  to {
+    stroke-dasharray: 120 0;
+    opacity: 1;
+  }
+}
+
+@keyframes drawPath2 {
+  to {
+    stroke-dasharray: 120 0;
+    opacity: 1;
+  }
+}
+
+
+
